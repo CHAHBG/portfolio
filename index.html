@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheikh Ahmadou Bamba GNINGUE | Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Cheikh Ahmadou Bamba GNINGUE, Geomatician, Data Scientist, Full Stack Developer.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Bamba<span class="dot">.</span></a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link" data-i18n="nav_about">About</a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a></li>
+                    <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+                <div class="nav-extras">
+                    <button id="lang-toggle" class="lang-btn" aria-label="Toggle Language">FR</button>
+                    <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero-content">
+                <p class="hero-greeting" data-i18n="hero_greeting">Hi, I'm</p>
+                <h1 class="hero-title"><span class="highlight">Cheikh Ahmadou Bamba GNINGUE</span>.
+                </h1>
+                <h2 class="hero-subtitle" data-i18n="hero_title">Geomatician, Data Scientist,
+                    Developer & Vibe Coder</h2>
+                <h3 class="hero-role" data-i18n="hero_subtitle">Specializing in Digital S&E, GIS &
+                    Data Management</h3>
+                <p class="hero-text" data-i18n="hero_text">I combine advanced GIS mastery with web
+                    development to create interactive dashboards and reliable data collection systems for impact-driven
+                    projects.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero_cta_projects">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero_cta_contact">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <a href="#about" class="scroll-link">
+                    <span class="scroll-text" data-i18n="hero_scroll">Scroll Down</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title" data-i18n="about_title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-i18n="about_text_1">Technician specialized in computer science and geomatics...</p>
+                        <p data-i18n="about_text_2">Passionate about discovery and solving technical challenges...</p>
+                        <div class="about-roles">
+                            <div class="role-item">
+                                <h4 data-i18n="about_role_1">Supervisor SIG/SIF...</h4>
+                                <p data-i18n="about_role_desc_1">Supervision...</p>
+                            </div>
+                            <div class="role-item">
+                                <h4 data-i18n="about_role_2">Data & GIS Operations Manager...</h4>
+                                <p data-i18n="about_role_desc_2">Development...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <h2 class="section-title" data-i18n="skills_title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fas fa-globe-africa skill-icon"></i>
+                        <h3>GIS & Mapping</h3>
+                        <p data-i18n="skill_gis">QGIS, ArcGIS, SuperMap</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-python skill-icon"></i>
+                        <h3>Python & AI</h3>
+                        <p data-i18n="skill_python">Data Analysis, ML</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-react skill-icon"></i>
+                        <h3>React & Components</h3>
+                        <p data-i18n="skill_react">React, APIs, Google API</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-js skill-icon"></i>
+                        <h3>Web Dev</h3>
+                        <p data-i18n="skill_web">HTML5, CSS3, PHP, Supabase</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-database skill-icon"></i>
+                        <h3>Data & SQL</h3>
+                        <p data-i18n="skill_db">PostgreSQL, SQL, NAS</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-mobile-alt skill-icon"></i>
+                        <h3>Mobile Data</h3>
+                        <p data-i18n="skill_mobile">KoboCollect, ODK</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-chart-pie skill-icon"></i>
+                        <h3>Data Viz</h3>
+                        <p data-i18n="skill_viz">Tableau, PowerBI</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title" data-i18n="projects_title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="images/BoundouDashboard.png" alt="Boundou Dashboard" class="project-thumb">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Boundou Dashboard</h3>
+                            <p class="project-description" data-i18n="project_BOUNDOU_desc">An interactive dashboard...
+                            </p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Data Viz</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://boundoudash.netlify.app" target="_blank" class="link-item"><i
+                                        class="fas fa-external-link-alt"></i> <span data-i18n="btn_live">Live
+                                        Demo</span></a>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="images/SuiviOperations.png" alt="Suivi Operations" class="project-thumb">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Suivi Post-traitement</h3>
+                            <p class="project-description" data-i18n="project_SUIVI_desc">A tracking application...</p>
+                            <div class="project-tags">
+                                <span class="tag">Web App</span>
+                                <span class="tag">Process Tracking</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://suivioperation.netlify.app/" target="_blank" class="link-item"><i
+                                        class="fas fa-external-link-alt"></i> <span data-i18n="btn_live">Live
+                                        Demo</span></a>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="images/PortailBoundou.png" alt="Portail Boundou" class="project-thumb">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Portail Boundou</h3>
+                            <p class="project-description" data-i18n="project_PORTAIL_desc">A professional portal...</p>
+                            <div class="project-tags">
+                                <span class="tag">Portal</span>
+                                <span class="tag">Info System</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://portailprocasefboundou.netlify.app" target="_blank"
+                                    class="link-item"><i class="fas fa-external-link-alt"></i> <span
+                                        data-i18n="btn_live">Live Demo</span></a>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: XamLeydi -->
+                    <article class="project-card" id="xamleydi-card" data-project="xamleydi">
+                        <div class="project-image">
+                            <img src="images/XAMLEYDI_3858.PNG" alt="XamLeydi Mobile App" class="project-thumb">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">XamLeydi</h3>
+                            <p class="project-description" data-i18n="project_XAMLEYDI_desc">Mobile application...</p>
+                            <div class="project-tags">
+                                <span class="tag">Mobile</span>
+                                <span class="tag">Digital S&E</span>
+                                <span class="tag">GIS</span>
+                            </div>
+                            <div class="project-links">
+                                <button class="btn btn-primary open-gallery">View Gallery</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+                <p class="contact-text" data-i18n="contact_text">I'm always open to discussing new projects...</p>
+
+                <div class="contact-actions">
+                    <a href="resume.html" target="_blank" class="btn btn-primary" id="btn-download"><i
+                            class="fas fa-file-download"></i> <span data-i18n="btn_download_cv">Download
+                            Resume</span></a>
+                </div>
+
+                <div class="social-links" style="margin-top: 2rem;">
+                    <a href="mailto:cheikhabgn@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/khadimgn" target="_blank" class="social-btn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/CHAHBG" target="_blank" class="social-btn"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Cheikh Ahmadou Bamba GNINGUE. <span data-i18n="footer_rights">All rights
+                    reserved.</span></p>
+        </div>
+    </footer>
+
+    <!-- XamLeydi Gallery Modal -->
+    <div id="xamleydi-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3858.PNG" alt="XamLeydi Screenshot 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3859.PNG" alt="XamLeydi Screenshot 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3856.PNG" alt="XamLeydi Screenshot 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3855.PNG" alt="XamLeydi Screenshot 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3857.PNG" alt="XamLeydi Screenshot 5">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3860.PNG" alt="XamLeydi Screenshot 6">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3861.PNG" alt="XamLeydi Screenshot 7">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3862.PNG" alt="XamLeydi Screenshot 8">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3863.PNG" alt="XamLeydi Screenshot 9">
+                </div>
+
+                <button class="carousel-prev" aria-label="Previous image">&#10094;</button>
+                <button class="carousel-next" aria-label="Next image">&#10095;</button>
+            </div>
+            <div class="carousel-dots">
+                <!-- Dots will be added via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

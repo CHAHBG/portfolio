@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Cheikh Ahmadou Bamba GNINGUE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #ffffff;
+            --text-primary: #111111;
+            --text-secondary: #555555;
+            --accent-color: #0044cc;
+            --border-color: #e0e0e0;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        /* Print-friendly resets */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.5;
+            font-size: 11pt;
+            /* Optimum for print */
+            max-width: 210mm;
+            /* A4 width */
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Layout */
+        header {
+            border-bottom: 2px solid var(--text-primary);
+            /* Heavy structural line */
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left h1 {
+            font-size: 24pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .header-left h2 {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 9pt;
+            color: var(--text-secondary);
+        }
+
+        .contact-item {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            letter-spacing: 0.1em;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        /* Experience Items */
+        .job-item,
+        .edu-item {
+            margin-bottom: 15px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-role {
+            font-weight: 700;
+            font-size: 12pt;
+        }
+
+        .job-company {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .job-date {
+            font-weight: 500;
+            font-size: 9pt;
+            text-align: right;
+        }
+
+        .job-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-details li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+            font-size: 10pt;
+            color: var(--text-secondary);
+        }
+
+        .job-details li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 30px;
+        }
+
+        .skill-group {
+            font-size: 10pt;
+        }
+
+        .skill-label {
+            font-weight: 700;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        .skill-list {
+            color: var(--text-secondary);
+            display: inline;
+        }
+
+        /* Print Controls */
+        .print-btn {
+            background: var(--text-primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-width: none;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="print-btn" onclick="window.print()">Imprimer le CV</button>
+
+    <header>
+        <div class="header-left">
+            <h1>Cheikh Ahmadou<br>Bamba GNINGUE</h1>
+            <h2>Spécialiste S&E Digital, SIG & Gestion de Données</h2>
+        </div>
+        <div class="header-right">
+            <span class="contact-item">Kounoune, Cité Sci Kébé – Rufisque, Sénégal</span>
+            <span class="contact-item"><a href="tel:+221776585371">+221 77 658 53 71</a></span>
+            <span class="contact-item"><a href="mailto:cheikhabgn@gmail.com">cheikhabgn@gmail.com</a></span>
+            <span class="contact-item"><a href="https://Suivioperation.netlify.app">Portfolio:
+                    suivioperation.netlify.app</a></span>
+        </div>
+    </header>
+
+    <section>
+        <div class="section-title">Profil</div>
+        <p>Géomaticien et Data Scientist à la convergence de l'analyse spatiale et de l'innovation numérique. Expert
+            dans la conception de systèmes numériques de Suivi-Évaluation (S&E) pour des projets d'envergure (PROCASEF).
+            Je transforme des données complexes en outils stratégiques en alliant une expertise SIG avancée à des
+            solutions web modernes. Ma mission : éclairer la prise de décision par une analyse rigoureuse et le
+            déploiement de systèmes digitaux évolutifs.</p>
+    </section>
+
+    <section>
+        <div class="section-title">Expérience Professionnelle</div>
+
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-role">Responsable Data & Digitalisation S&E (Superviseur SIG/SIF)</div>
+                    <div class="job-company">BET PLUS – Projet PROCASEF (Financement Banque Mondiale)</div>
+                </div>
+                <div class="job-date">09/2025 – Aujourd'hui</div>
+            </div>
+            <div class="job-details">
+                <ul>
+                    <li><strong>Réalisation Clé :</strong> Conception et déploiement intégral de la plateforme web
+                        "Suivi Opérations Boundou" (https://Suivioperation.netlify.app). Ce système centralise le suivi
+                        en temps réel des opérations foncières.</li>
+                    <li><strong>Innovation Mobile :</strong> Développement de l'application mobile
+                        <strong>XamLeydi</strong> pour moderniser l'affichage public, facilitant la recherche
+                        parcellaire et la remontée digitale des plaintes.
+                    </li>
+                    <li><strong>Transparence :</strong> Mise en place du <strong>Portail Boundou</strong>, centralisant
+                        l'accès à l'information foncière et améliorant la transparence du système auprès des acteurs
+                        locaux.</li>
+                    <li>Mise en place du dispositif de collecte mobile (Mobile Data Collection) via KoboCollect/QField,
+                        garantissant la fiabilité des données terrain et réduisant les erreurs de saisie de 30%.</li>
+                    <li>Gestion de bases de données relationnelles (PostgreSQL) pour consolider les indicateurs de
+                        performance du projet.</li>
+                    <li>Formation et supervision d'une équipe technique, renforçant les capacités locales en matière de
+                        collecte et de remontée d'informations.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-role">Chargé de Gestion de Données & SIG</div>
+                    <div class="job-company">BET PLUS – BOUNDOU</div>
+                </div>
+                <div class="job-date">08/2024 – 08/2025</div>
+            </div>
+            <div class="job-details">
+                <ul>
+                    <li>Production de statistiques et d'indicateurs géospatiaux pour le suivi des activités du projet
+                        (Lot LTH60).</li>
+                    <li>Contrôle qualité des données (Quality Assurance) et nettoyage des bases de données avant
+                        reporting.</li>
+                    <li>Numérisation d'images aériennes et mise à jour du référentiel géographique.</li>
+                    <li>Élaboration de cartes thématiques pour visualiser l'impact des interventions sur la zone.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-role">Chargé d'Exploitation Données & SIG</div>
+                    <div class="job-company">SONAGED – Dakar</div>
+                </div>
+                <div class="job-date">09/2023 – 08/2024</div>
+            </div>
+            <div class="job-details">
+                <ul>
+                    <li>Développement de routines d'analyse (Python) pour automatiser le traitement des données
+                        spatiales.</li>
+                    <li>Création de tableaux de bord (Dashboards) et d'infographies interactives pour la présentation
+                        des résultats à la direction.</li>
+                    <li>Conception de formulaires d'enquête numériques pour le recensement des acteurs locaux.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-role">Technicien Stagiaire – Support et Vente SIG</div>
+                    <div class="job-company">SuperMap – Beijing (Distanciel)</div>
+                </div>
+                <div class="job-date">08/2021 – 08/2023</div>
+            </div>
+            <div class="job-details">
+                <ul>
+                    <li>Développement de systèmes SIG en ligne et intégration de bases de données.</li>
+                    <li>Modélisation, gestion et visualisation de données géospatiales.</li>
+                    <li>Formation des utilisateurs et assistance technique.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Formation</div>
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-role">Licence Pro en Sciences Économiques et Gestion</div>
+                    <div class="job-company">FASEG – Dakar (Analyste de Données Industrielles)</div>
+                </div>
+                <div class="job-date">09/2024 – En cours</div>
+            </div>
+        </div>
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-role">Certification en Gouvernance Foncière</div>
+                    <div class="job-company">PROCASEF – ESEA Dakar</div>
+                </div>
+                <div class="job-date">03/2024 – 06/2024</div>
+            </div>
+        </div>
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-role">BTS en Géomatique (Major de promotion)</div>
+                    <div class="job-company">CEDT G15 – Dakar</div>
+                </div>
+                <div class="job-date">10/2021 – 08/2023</div>
+            </div>
+        </div>
+        <div class="job-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-role">Baccalauréat Scientifique – Série S2</div>
+                    <div class="job-company">Collège Cardinal Hyacinthe Thiandoum</div>
+                </div>
+                <div class="job-date">2017</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Compétences Techniques</div>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <div class="skill-label">Suivi-Évaluation Digital :</div>
+                <div class="skill-list">Web Apps, Collecte mobile (ODK, KoboCollect, QField), Dashboards dynamiques.
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">Analyse & Données :</div>
+                <div class="skill-list">PostgreSQL, SQL, Excel, Talend, SQLite, Neon DB, Railway, Gestion serveurs NAS.
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">Géomatique (SIG) :</div>
+                <div class="skill-list">ArcGIS, QGIS, SuperMap, DroneDeploy, Cartographie thématique.</div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">Programmation & Web :</div>
+                <div class="skill-list">Python, React, API, Google API, Supabase, HTML, JS, PHP.</div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-label">Langues :</div>
+                <div class="skill-list">Français (Courant), Anglais (Technique).</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Prix et Distinctions</div>
+        <div class="job-details">
+            <ul>
+                <li><strong>Certificat Hackathon SETER (2024) :</strong> Top 10/100 (Application mobile usagers
+                    XamLeydi).</li>
+                <li><strong>Major du BTS Géomatique (2023) :</strong> CEDT G15.</li>
+                <li><strong>Mention Spéciale "Liberté de la Presse" (2023) :</strong> Concours "Les 24 Heures du SIG".
+                </li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>
