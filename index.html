@@ -225,31 +225,124 @@
                             </div>
                         </div>
                     </article>
+
+                    <!-- Project 5: SIF Boundou -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="images/SIF_BOUNDOU.png" alt="SIF Boundou" class="project-thumb">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">SIF Boundou</h3>
+                            <p class="project-description" data-i18n="project_SIF_desc">Advanced Geoportal...</p>
+                            <div class="project-tags">
+                                <span class="tag">Geoportal</span>
+                                <span class="tag">SIG</span>
+                                <span class="tag">WebMapping</span>
+                            </div>
+                            <!-- Links to be added when available -->
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Gestionnaire de Dossiers Fonciers -->
+                    <article class="project-card" data-project-detail="project_LAND_detail">
+                        <div class="project-image">
+                            <img src="images/Gestionnairefoncier.png" alt="Gestionnaire Foncier" class="project-thumb">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Gestionnaire de Dossiers</h3>
+                            <p class="project-description" data-i18n="project_LAND_desc">Automated application...</p>
+                            <div class="project-tags">
+                                <span class="tag">Automation</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Land Tenure</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 7: Nicad Matcher -->
+                    <article class="project-card" data-project-detail="project_NICAD_detail">
+                        <div class="project-image">
+                            <img src="images/NicadMatcher.png" alt="Nicad Matcher" class="project-thumb">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Nicad Matcher</h3>
+                            <p class="project-description" data-i18n="project_NICAD_desc">Specialized tool...</p>
+                            <div class="project-tags">
+                                <span class="tag">Data Cleaning</span>
+                                <span class="tag">Algorithms</span>
+                                <span class="tag">Python</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
-                <p class="contact-text" data-i18n="contact_text">I'm always open to discussing new projects...</p>
+        <!-- [Existing Contact Section] -->
 
-                <div class="contact-actions">
-                    <a href="resume.html" target="_blank" class="btn btn-primary" id="btn-download"><i
-                            class="fas fa-file-download"></i> <span data-i18n="btn_download_cv">Download
-                            Resume</span></a>
+    </main>
+
+    <!-- [Existing Footer] -->
+
+    <!-- XamLeydi Gallery Modal (Existing) -->
+    <div id="xamleydi-modal" class="modal">
+        <!-- ... existing content ... -->
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="carousel-container">
+                <!-- ... slides ... -->
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3858.PNG" alt="XamLeydi Screenshot 1">
+                </div>
+                <!-- ... other slides ... -->
+                <div class="carousel-slide">
+                    <img src="images/XAMLEYDI_3863.PNG" alt="XamLeydi Screenshot 9">
                 </div>
 
-                <div class="social-links" style="margin-top: 2rem;">
-                    <a href="mailto:cheikhabgn@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/khadimgn" target="_blank" class="social-btn"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/CHAHBG" target="_blank" class="social-btn"><i
-                            class="fab fa-github"></i></a>
+                <button class="carousel-prev" aria-label="Previous image">&#10094;</button>
+                <button class="carousel-next" aria-label="Next image">&#10095;</button>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+    </div>
+
+    <!-- NEW: Generic Project Detail Modal -->
+    <div id="project-detail-modal" class="modal">
+        <div class="modal-content project-detail-content">
+            <span class="close-modal" id="close-project-modal">&times;</span>
+            <div class="detail-container">
+                <div class="detail-image-wrapper">
+                    <img id="detail-image" src="" alt="Project Detail">
+                </div>
+                <div class="detail-text-wrapper">
+                    <h3 id="detail-title"></h3>
+                    <p id="detail-description"></p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+            <p class="contact-text" data-i18n="contact_text">I'm always open to discussing new projects...</p>
+
+            <div class="contact-actions">
+                <a href="resume.html" target="_blank" class="btn btn-primary" id="btn-download"><i
+                        class="fas fa-file-download"></i> <span data-i18n="btn_download_cv">Download
+                        Resume</span></a>
+            </div>
+
+            <div class="social-links" style="margin-top: 2rem;">
+                <a href="mailto:cheikhabgn@gmail.com" class="social-btn"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/khadimgn" target="_blank" class="social-btn"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/CHAHBG" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
     </main>
 
     <footer class="footer">

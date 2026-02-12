@@ -31,14 +31,7 @@
     --transition: 0.2s ease-in-out;
 }
 
-/* Dark Mode Overrides */
-body.light-mode {
-    /* Actually, let's flip logic. Default was dark in previous, keeping structure but swapping variables. */
-    /* Previous theme was "dark default", let's make this one "light default" but support dark mode class properly.
-      Wait, existing script uses 'light-mode' class to *enable* light mode.
-      So default body is Dark. 
-   */
-}
+/* Dark Mode Overrides handled below */
 
 /* Let's reset to Dark Default to match script behavior, but clean. */
 :root {
@@ -374,15 +367,46 @@ button {
 
 /* Projects Section */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    overflow-x: auto;
     gap: 2rem;
+    padding-bottom: 1.5rem;
+    /* Space for scrollbar */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar for cleaner look, but allow scrolling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-secondary) transparent;
+}
+
+.projects-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: var(--radius-sm);
+}
+
+.projects-grid::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 .project-card {
+    min-width: 350px;
+    width: 350px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
     border: 1px solid var(--border-color);
     background-color: var(--bg-body);
     transition: var(--transition);
+}
+
+@media (max-width: 600px) {
+    .project-card {
+        min-width: 85vw;
+        width: 85vw;
+    }
 }
 
 .project-card:hover {
@@ -627,4 +651,91 @@ button {
         transform: translateX(-50%);
         z-index: 1002;
     }
+}
+
+/* Project Detail Modal Styles */
+.project-detail-content {
+    width: 90%;
+    max-width: 900px;
+    /* Wider for side-by-side layout */
+    background-color: var(--bg-body);
+    border: 1px solid var(--border-color);
+    padding: 0;
+    overflow: hidden;
+}
+
+.detail-container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .detail-container {
+        flex-direction: column;
+        /* Changed from row to column as requested */
+        height: 85vh;
+    }
+}
+
+.detail-image-wrapper {
+    flex: 0 0 55%;
+    /* Fixed height percentage for image area */
+    background-color: #0d0d0d;
+    /* Dark background for image contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.detail-image-wrapper img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.detail-text-wrapper {
+    flex: 1;
+    /* Takes remaining space */
+    padding: 2rem 3rem;
+    overflow-y: auto;
+    display: block;
+    /* Standard block for text flow */
+}
+
+.detail-text-wrapper h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.detail-text-wrapper p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+#close-project-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    z-index: 10;
+    background: rgba(var(--bg-body-rgb), 0.5);
+    /* Optional contrast */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#close-project-modal:hover {
+    color: var(--accent-color);
 }

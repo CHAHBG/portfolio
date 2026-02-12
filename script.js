@@ -67,7 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (translations[lang] && translations[lang][key]) {
-                element.textContent = translations[lang][key];
+                // Check if the key ends with _detail to use innerHTML for rich text
+                if (key.endsWith('_detail')) {
+                    element.innerHTML = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
             }
         });
 
@@ -169,5 +174,63 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
+    }
+
+    // --- Generic Project Detail Modal ---
+    const detailModal = document.getElementById('project-detail-modal');
+    if (detailModal) {
+        const detailImage = document.getElementById('detail-image');
+        const detailTitle = document.getElementById('detail-title');
+        const detailDesc = document.getElementById('detail-description');
+        const closeDetailBtn = document.getElementById('close-project-modal');
+
+        // Open Modal Logic
+        document.querySelectorAll('[data-project-detail]').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', (e) => {
+                // Prevent opening if clicking a link/button inside
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+
+                const detailKey = card.getAttribute('data-project-detail');
+                const titleKey = detailKey.replace('_detail', '_desc'); // Heuristic or custom mapping?
+                // Actually, title isn't keyed in translations, usually just hardcoded in HTML? 
+                // Let's grab the title from the card itself.
+                const titleText = card.querySelector('.project-title').textContent;
+                const imgSrc = card.querySelector('img').getAttribute('src');
+
+                // Set Content
+                detailImage.src = imgSrc;
+                detailTitle.textContent = titleText; // Project names are usually proper nouns
+
+                // Set data-i18n for dynamic updates
+                detailDesc.setAttribute('data-i18n', detailKey);
+
+                // Immediate update
+                if (translations[currentLang] && translations[currentLang][detailKey]) {
+                    detailDesc.innerHTML = translations[currentLang][detailKey];
+                }
+
+                detailModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close Logic
+        function closeDetailModal() {
+            detailModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        closeDetailBtn.addEventListener('click', closeDetailModal);
+
+        detailModal.addEventListener('click', (e) => {
+            if (e.target === detailModal) closeDetailModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && detailModal.style.display === 'flex') {
+                closeDetailModal();
+            }
+        });
     }
 });
