@@ -28,28 +28,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
 
     // --- Dark/Light Mode Toggle ---
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme) {
-        body.classList.add(currentTheme);
-        updateThemeIcon(currentTheme);
+    // Dark is the default. In dark mode show a SUN icon (click = go to light).
+    // In light mode show a MOON icon (click = go back to dark).
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light-mode') {
+        body.classList.add('light-mode');
     }
+    updateThemeIcon();
 
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('light-mode');
         const theme = body.classList.contains('light-mode') ? 'light-mode' : '';
         localStorage.setItem('theme', theme);
-        updateThemeIcon(theme);
+        updateThemeIcon();
     });
 
-    function updateThemeIcon(theme) {
+    function updateThemeIcon() {
         const icon = themeToggle.querySelector('i');
-        if (theme === 'light-mode') {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        }
+        const isLight = body.classList.contains('light-mode');
+        // In light mode → show moon to go back to dark
+        // In dark mode  → show sun to go to light
+        icon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
     }
 
     // --- Language Toggle ---
@@ -93,13 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navLinks.forEach(li => {
-            // Simple visual feedback without class dependency for now,
-            // or toggle class if CSS is rigorous.
-            // Keeping it simple as per original request.
             if (li.getAttribute('href').includes(current)) {
-                li.style.color = 'var(--accent-color)';
+                li.style.color = 'var(--green)';
             } else {
-                li.style.color = 'var(--text-secondary)';
+                li.style.color = '';
             }
         });
     });
@@ -176,6 +172,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Projects Carousel ---
+    const slider = document.getElementById('projects-slider');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
+    if (slider && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            // Scroll back one full width
+            slider.scrollBy({ left: -slider.clientWidth, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+            // Scroll forward one full width
+            slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
+        });
+    }
+
     // --- Generic Project Detail Modal ---
     const detailModal = document.getElementById('project-detail-modal');
     if (detailModal) {
@@ -192,15 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
 
                 const detailKey = card.getAttribute('data-project-detail');
-                const titleKey = detailKey.replace('_detail', '_desc'); // Heuristic or custom mapping?
-                // Actually, title isn't keyed in translations, usually just hardcoded in HTML? 
-                // Let's grab the title from the card itself.
-                const titleText = card.querySelector('.project-title').textContent;
+                // Grab the title from the card - class is now .project-name
+                const titleText = card.querySelector('.project-name').textContent;
                 const imgSrc = card.querySelector('img').getAttribute('src');
 
                 // Set Content
                 detailImage.src = imgSrc;
-                detailTitle.textContent = titleText; // Project names are usually proper nouns
+                detailTitle.textContent = titleText;
 
                 // Set data-i18n for dynamic updates
                 detailDesc.setAttribute('data-i18n', detailKey);
